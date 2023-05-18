@@ -1,0 +1,32 @@
+# Installing Minikube with Docker on Ubuntu 20.04
+
+# Step 1: Install Docker
+sudo su -
+apt update 
+apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt install docker-ce
+sudo usermod -aG docker $USER && newgrp docker
+
+
+# Step 2: Install Minikube and kubectl
+## Install Minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+
+## Start Minikube with Docker driver
+sudo minikube start --driver=docker
+
+# Step 3 Install and kubectl
+sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# Verify kubectl installation
+kubectl version --client
+
+# Conclusion
+echo "Minikube and kubectl installation completed successfully."
