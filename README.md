@@ -34,8 +34,7 @@ Install the latest stable release of Minikube on x86-64 Linux using the binary d
 ```curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64```
 
 * Install Minikube by moving the binary to the appropriate location:
-* 
-```sudo install minikube-linux-amd64 /usr/local/bin/minikube```
+* ```sudo install minikube-linux-amd64 /usr/local/bin/minikube```
 
 ### Start Minikube with Docker driver
 
