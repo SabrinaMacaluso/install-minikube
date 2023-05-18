@@ -40,7 +40,7 @@ Install the latest stable release of Minikube on x86-64 Linux using the binary d
 
 ```sudo minikube start --driver=docker```
 
-## Install kubectl
+## Step 3: Install kubectl
 * ```sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"```
 * ```sudo curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"```
 * ```echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check```
