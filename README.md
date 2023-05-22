@@ -1,5 +1,12 @@
 # Installing Minikube with Docker on Ubuntu 20.04
 
+## Prerequisite
+
+* 2 CPUs or more
+* 2GB of free memory
+* 20GB of free disk space
+
+
 ## Install docker 
 
 * Switch to the root user by running the following command:
